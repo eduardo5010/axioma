@@ -1,0 +1,71 @@
+.aps {
+  gap: 0;
+}
+
+.aps-cartao {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid var(--prp-border);
+  border-radius: 14px;
+  padding: 22px 24px;
+  background: var(--prp-card);
+  max-width: 560px;
+}
+
+.aps-cartao h3 {
+  font-size: 19px;
+}
+
+.aps-preco {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 34px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--prp-acento);
+}
+
+.aps-preco span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--prp-dim);
+}
+
+.aps-perks {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--prp-texto);
+}
+
+.aps-perks li::before {
+  content: '✓ ';
+  color: var(--prp-verde, #34d399);
+}
+
+.aps-acoes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.aps-ativo {
+  color: var(--prp-verde, #34d399);
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.aps-caixa-dim {
+  border: 1px dashed var(--prp-border);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: var(--prp-bg);
+}

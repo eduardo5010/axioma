@@ -1,0 +1,497 @@
+.prp {
+  --prp-bg: var(--lp-bg2, var(--bg2, #10141d));
+  --prp-card: var(--lp-card, var(--card, #161c28));
+  --prp-border: var(--lp-line, var(--border, #2a3345));
+  --prp-texto: var(--lp-texto, var(--text, #e6ebf4));
+  --prp-dim: var(--lp-mut, var(--dim, #8b96a9));
+  --prp-acento: var(--lp-geo, var(--azul, #60a5fa));
+  --prp-cta: var(--lp-primaria, var(--vermelho, #f87171));
+  --prp-ambar: var(--lp-ambar, var(--amarelo, #facc15));
+  --prp-verde: var(--verde, #34d399);
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: var(--prp-texto);
+  font-family: var(--lp-font-jogo, 'Segoe UI', system-ui, sans-serif);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.prp p,
+.prp h3,
+.prp h4 {
+  margin: 0;
+}
+
+.prp h3 {
+  font-size: 17px;
+}
+
+.prp-rotulo {
+  font-family: var(--lp-font-mono, ui-monospace, monospace);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--prp-acento);
+  margin: 0 0 6px;
+}
+
+.prp-dim {
+  color: var(--prp-dim);
+  font-size: 12.5px;
+}
+
+.prp-cab {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 20px 22px;
+  border: 1px solid var(--prp-border);
+  border-radius: 14px;
+  background: var(--prp-card);
+}
+
+.prp-fluxo {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.prp-fluxo i {
+  color: var(--prp-acento);
+  font-style: normal;
+}
+
+.prp-stats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.prp-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  border: 1px solid var(--prp-border);
+  border-radius: 999px;
+  padding: 5px 12px;
+  font-size: 12px;
+  color: var(--prp-dim);
+  background: var(--prp-bg);
+}
+
+.prp-stat b {
+  font-size: 15px;
+  color: var(--prp-texto);
+}
+
+.prp-caixa {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid var(--prp-border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  background: var(--prp-card);
+}
+
+.prp-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.prp-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--prp-dim);
+}
+
+.prp-campo input,
+.prp-campo textarea {
+  background: var(--prp-bg);
+  border: 1px solid var(--prp-border);
+  border-radius: 10px;
+  padding: 9px 12px;
+  color: var(--prp-texto);
+  font: inherit;
+  resize: vertical;
+}
+
+.prp-campo input:focus,
+.prp-campo textarea:focus {
+  outline: none;
+  border-color: var(--prp-acento);
+}
+
+.prp-bt {
+  align-self: flex-start;
+  background: var(--prp-card);
+  border: 1px solid var(--prp-border);
+  border-radius: 10px;
+  padding: 8px 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--prp-texto);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.prp-bt:hover:not(:disabled) {
+  border-color: var(--prp-acento);
+}
+
+.prp-bt:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.prp-bt-primario {
+  background: var(--prp-cta);
+  border-color: var(--prp-cta);
+  color: #ffffff;
+}
+
+.prp-bt-primario:hover:not(:disabled) {
+  border-color: var(--prp-cta);
+  opacity: 0.88;
+}
+
+.prp-bt-votado {
+  background: transparent;
+  border-color: var(--prp-verde);
+  color: var(--prp-verde);
+}
+
+.prp-entra {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.prp-erro {
+  color: var(--prp-cta);
+  font-size: 12.5px;
+}
+
+.prp-aviso {
+  border: 1px dashed var(--prp-border);
+  border-radius: 10px;
+  padding: 9px 13px;
+  font-size: 13px;
+  color: var(--prp-ambar);
+  background: var(--prp-card);
+}
+
+.prp-carrega {
+  border: 1px dashed var(--prp-border);
+  border-radius: 14px;
+  padding: 22px;
+  color: var(--prp-dim);
+  text-align: center;
+  background: var(--prp-card);
+}
+
+.prp-erro-grande {
+  border: 1px solid var(--prp-border);
+  border-radius: 14px;
+  padding: 22px;
+  background: var(--prp-card);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prp-grupos {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.prp-grupo {
+  border: 1px solid var(--prp-border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  background: var(--prp-card);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.prp-grupo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.prp-grupo-qtd {
+  border: 1px solid var(--prp-border);
+  border-radius: 999px;
+  padding: 1px 9px;
+  font-size: 11px;
+  color: var(--prp-dim);
+  background: var(--prp-bg);
+}
+
+.prp-grupo-desc {
+  margin-bottom: 12px;
+}
+
+.prp-lista {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0;
+}
+
+.prp-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid var(--prp-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  background: var(--prp-bg);
+}
+
+.prp-item-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.prp-badge {
+  border: 1px solid var(--prp-border);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.prp-b-votacao {
+  color: var(--prp-acento);
+  border-color: var(--prp-acento);
+  background: rgba(96, 165, 250, 0.12);
+}
+
+.prp-b-aprovada {
+  color: var(--prp-ambar);
+  border-color: var(--prp-ambar);
+  background: rgba(250, 204, 21, 0.12);
+}
+
+.prp-b-desenvolvimento {
+  color: #fb923c;
+  border-color: #fb923c;
+  background: rgba(251, 146, 60, 0.12);
+}
+
+.prp-b-implementada {
+  color: var(--prp-verde);
+  border-color: var(--prp-verde);
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.prp-b-recusada {
+  color: var(--prp-dim);
+  border-color: var(--prp-border);
+  background: rgba(139, 150, 169, 0.1);
+}
+
+.prp-item-votos {
+  font-size: 12px;
+  color: var(--prp-dim);
+}
+
+.prp-item-votos b {
+  font-size: 15px;
+  color: var(--prp-texto);
+}
+
+.prp-item-desc {
+  font-size: 13px;
+  color: var(--prp-dim);
+}
+
+.prp-item-meta {
+  display: flex;
+  gap: 6px;
+  font-size: 11.5px;
+}
+
+.prp-item-acoes {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+}
+
+.prp-tag {
+  font-size: 11px;
+  color: var(--prp-dim);
+  border: 1px dashed var(--prp-border);
+  border-radius: 999px;
+  padding: 2px 8px;
+}
+
+.prp-gerencia {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2px;
+  font-size: 12.5px;
+}
+
+.prp-gerencia select {
+  background: var(--prp-bg);
+  border: 1px solid var(--prp-border);
+  border-radius: 8px;
+  padding: 4px 8px;
+  font: inherit;
+  font-size: 12px;
+  color: var(--prp-texto);
+}
+
+/* --- Análise do motor ------------------------------------------------------ */
+
+.prp-analise {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--prp-border);
+  border-left: 3px solid var(--prp-acento);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 4px;
+  background: rgba(96, 165, 250, 0.05);
+}
+
+.prp-analise-pendente {
+  border-left-color: var(--prp-ambar);
+  background: rgba(250, 204, 21, 0.05);
+}
+
+.prp-analise-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.prp-analise-titulo {
+  font-family: var(--lp-font-mono, ui-monospace, monospace);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  color: var(--prp-acento);
+}
+
+.prp-bt-mini {
+  padding: 3px 9px;
+  font-size: 11.5px;
+}
+
+.prp-analise-resumo {
+  font-size: 13px;
+  color: var(--prp-texto);
+}
+
+.prp-analise-secao h5 {
+  margin: 0 0 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--prp-dim);
+}
+
+.prp-analise-lista {
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12.5px;
+  color: var(--prp-texto);
+}
+
+.prp-analise-quebras {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.prp-analise-quebras li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--prp-texto);
+}
+
+.prp-risco {
+  border-radius: 999px;
+  padding: 1px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.prp-risco-alta {
+  color: var(--prp-cta);
+  border: 1px solid var(--prp-cta);
+  background: rgba(248, 113, 113, 0.12);
+}
+
+.prp-risco-media {
+  color: var(--prp-ambar);
+  border: 1px solid var(--prp-ambar);
+  background: rgba(250, 204, 21, 0.12);
+}
+
+.prp-risco-baixa {
+  color: var(--prp-verde);
+  border: 1px solid var(--prp-verde);
+  background: rgba(52, 211, 153, 0.12);
+}
+
+.prp-analise-campo {
+  font-family: var(--lp-font-mono, ui-monospace, monospace);
+  font-size: 12px;
+  color: var(--prp-texto);
+}
+
+.prp-analise-afeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.prp-chip {
+  border: 1px solid var(--prp-border);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--prp-acento);
+  background: var(--prp-bg);
+}

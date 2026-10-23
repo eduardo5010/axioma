@@ -1,0 +1,11 @@
+node_modules/
+dist/
+.vite/
+.env.local
+.env.*.local
+.env
+server/*.json
+axioma-*-firebase-adminsdk-*.json
+.DS_Store
+*.log
+.neon

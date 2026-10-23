@@ -1,0 +1,41 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function estaAutenticado() {
+      return request.auth != null;
+    }
+
+    function validaNovaProposta() {
+      return request.resource.data.titulo is string
+        && request.resource.data.titulo.size() >= 5
+        && request.resource.data.titulo.size() <= 140
+        && request.resource.data.descricao is string
+        && request.resource.data.descricao.size() >= 5
+        && request.resource.data.descricao.size() <= 1000
+        && request.resource.data.status == 'votacao'
+        && request.resource.data.autor is map
+        && request.resource.data.autor.uid == request.auth.uid
+        && request.resource.data.autor.nome is string
+        && request.resource.data.votos == 0
+        && request.resource.data.votosPor is list
+        && request.resource.data.votosPor.size() == 0;
+    }
+
+    match /propostas/{proposta} {
+      allow read: if true;
+      allow create: if estaAutenticado() && validaNovaProposta();
+      allow update: if estaAutenticado()
+        && request.resource.data.titulo == resource.data.titulo
+        && request.resource.data.descricao == resource.data.descricao
+        && request.resource.data.autor == resource.data.autor
+        && request.resource.data.criadaEm == resource.data.criadaEm;
+      allow delete: if request.auth != null && request.auth.uid == resource.data.autor.uid;
+    }
+
+    match /membros/{uid} {
+      allow read: if request.auth != null && request.auth.uid == uid;
+      allow write: if false;
+      allow delete: if request.auth != null && request.auth.uid == uid;
+    }
+  }
+}
